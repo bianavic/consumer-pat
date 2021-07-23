@@ -4,6 +4,7 @@ import br.com.alelo.consumer.consumerpat.dto.ConsumerDTO;
 import br.com.alelo.consumer.consumerpat.entity.Consumer;
 import br.com.alelo.consumer.consumerpat.respository.AddressRepository;
 import br.com.alelo.consumer.consumerpat.respository.ConsumerRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +28,7 @@ public class ConsumerController {
     AddressRepository addressRepository;
 
     /* Deve listar todos os clientes (cerca de 500) */
+    @ApiOperation( value = "Returns Customers")
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping(value = "/consumerList")
     public List<Consumer> listAllConsumers() {
